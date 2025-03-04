@@ -1,0 +1,101 @@
+---
+title: "Estudiar el comportamiento de los autos rentados en la empresa en el año 2024"
+author: "Nathalia Bognanno, Maria Herrera, Angelo Lara"
+date: "2025-03-01"
+output: pdf_document
+---
+# Análisis de el aeropuerto:
+
+## Introducción
+
+
+
+## Objetivos 
+
++ Calcular las estadísticas descriptivas de la tarifa total, la tarifa promedio por día y la factura total.
+
++ Calcular la proporción de las reserva pagadas frente a las no pagadas.
+
++ Determinar cual es la fuente de reservación más utilizada.
+
++ Determinar los tipos de autos más rentados según el aeropuerto.
+
++ Analizar cuánto varía la tarifa diaria de un tipo de vehículo en los distintos aeropuertos.
+
+## Análisis
+
+```{r, echo = FALSE , message=FALSE, warning=FALSE}
+
+#Limpieza de datos de fecha
+
+library(dplyr)
+library(lubridate)
+library(readxl)
+
+Rentalcar_tabla <- read_excel("RentalCar G2-G9.xlsx")
+
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Pickupd = as.POSIXct(Pickupd))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Fecha_Pickup = as.Date(Pickupd))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Hora_Pickup = format(Pickupd, "%H:%M:%S"))
+
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Returnd = as.POSIXct(Returnd))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Fecha_Returnd = as.Date(Returnd))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Hora_Returnd = format(Returnd, "%H:%M:%S"))
+
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Booked = as.POSIXct(Booked))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Fecha_Booked = as.Date(Booked))
+Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Hora_Booked = format(Booked, "%H:%M:%S"))
+
+```
+
+
+#### Frecuencias de reservas por mes
+
+Bla Bla Bla
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+#tabla agrupada de frecuencias por fecha
+frecuencia_por_tiempo_Status <- Rentalcar_tabla %>%
+  group_by(periodo = floor_date(Fecha_Booked, "month"), Status_) %>%
+  summarise(frecuencia = n())
+
+# Gráfico de frecuencia por mes de reserva 
+ggplot(frecuencia_por_tiempo_Status, aes(x = periodo, y = frecuencia, color = Status_)) +
+  geom_line() +
+  labs(title = "Serie de Tiempo de Frecuencia de Estado",
+       x = "Periodo",
+       y = "Frecuencia") +
+  theme_minimal()
+```
+
+##### Conclusiones
+
+Bla Bla Bla
+
+#### Frecuencia de reserva de autos por fuente
+
+Bla Bla Bla
+
+```{r,  echo = FALSE, message=FALSE, warning=FALSE}
+
+# Tabla agrupada por frecuencia de Fuente (Source)
+frecuencia_por_tiempo_Source <- Rentalcar_tabla %>%
+  group_by(periodo = floor_date(Fecha_Booked, "month"), Source) %>%
+  summarise(frecuencia = n())
+
+# Gráfico de barra de las fuentes
+ggplot(frecuencia_por_tiempo_Source, aes(x = Source, y = frecuencia, fill = Source)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Frecuencia de las Fuentes de renta",
+       x = "Fuentes",
+       y = "Frecuencia") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+##### Conclusiones
+
+Bla bla bla
