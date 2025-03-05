@@ -7,7 +7,11 @@ output: pdf_document
 # Análisis de el aeropuerto:
 
 ## Introducción
+“Rental Cars” es una empresa cuyo servicio es el alquiler de automóviles durante un período corto de tiempo (ya sea que la persona necesite alquilar un vehículo por un viaje, unas vacaciones, o si su coche no se encuentra disponible por fallas técnicas). En esencia, se paga una tarifa para utilizar el auto de la empresa durante un tiempo determinado.
 
+Todos los movimientos realizados (el vehículo que fue alquilado, el tiempo de reserva, y el monto total pagado por el alquiler) se registraron en una base de datos hecha en Excel, la cual tiene un registro del total de movimientos realizados desde el año 2023 hasta el año 2024 junto con los aeropuertos donde se realizó la reserva y entrega del automóvil. Al revisar cuidadosamente la BBDD, se pudo notar una especie de patrón en el comportamiento de los autos rentados durante un período específico de tiempo (en el año 2024): Algunos autos fueron alquilados un mayor número de veces que los otros, mientras que hubo aeropuertos donde se realizó un mayor número de reservas en contraste con los demás.
+
+Resaltar estos puntos clave dentro la misma BBDD en Excel puede resultar difícil y extenso debido al número de datos presentes en la misma, por lo que la implementación de procedimientos estadísticos toma un papel fundamental para explicar de forma más detallada y resumida esta serie de patrones entre los vehículos de alquiler y el aeropuerto donde fue alquilado cada uno. Así como también el uso de diferentes gráficos puede ayudar a una mejor visualización de los datos. De este modo, se van a aplicar diversos cálculos estadísticos y gráficos para estudiar es Comportamiento de los autos rentados en la Empresa durante el año 2024.
 
 
 ## Objetivos 
