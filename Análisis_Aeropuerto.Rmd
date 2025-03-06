@@ -2,7 +2,9 @@
 title: "Estudiar el comportamiento de los autos rentados en la empresa en el año 2024"
 author: "Nathalia Bognanno, Maria Herrera, Angelo Lara"
 date: "2025-03-01"
-output: pdf_document
+output:
+  pdf_document: default
+  word_document: default
 ---
 # Análisis de el aeropuerto:
 
@@ -80,17 +82,39 @@ Bla Bla Bla
 
 ```{r,  echo = FALSE, message=FALSE, warning=FALSE}
 
+library(RColorBrewer)
+
 # Tabla agrupada por frecuencia de Fuente (Source)
 frecuencia_por_tiempo_Source <- Rentalcar_tabla %>%
   group_by(periodo = floor_date(Fecha_Booked, "month"), Source) %>%
   summarise(frecuencia = n())
 
+colores_azules_degradados <- c(
+  "#E1F5FE",  # Azul muy claro
+  "#B3E5FC",
+  "#81D4FA",
+  "#4FC3F7",
+  "#29B6F6",
+  "#03A9F4",
+  "#039BE5",
+  "#0288D1",
+  "#0277BD",
+  "#01579B",  # Azul oscuro
+  "#0D47A1",  # Azul muy oscuro
+  "#1A237E",  # Azul oscuro con un toque violeta
+  "#1976D2",  # Azul intermedio
+  "#1565C0"   # Azul aún más profundo
+)
+
+
+
 # Gráfico de barra de las fuentes
-ggplot(frecuencia_por_tiempo_Source, aes(x = Source, y = frecuencia, fill = Source)) +
+ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Source, -frecuencia), y = frecuencia, fill = Source)) +
   geom_bar(stat = "identity") +
   labs(title = "Frecuencia de las Fuentes de renta",
        x = "Fuentes",
        y = "Frecuencia") +
+  scale_fill_manual(values = colores_azules_degradados) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
@@ -99,3 +123,13 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = Source, y = frecuencia, fill = Sour
 ##### Conclusiones
 
 Bla bla bla
+
+
+### Estadísticas descriptivas de la tarifa total, la tarifa promedio por día, los cobros extras y la factura total.
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+
+# Obtener estadísticas descriptivas
+summary(Rentalcar_tabla[c("TotalRate", "AvgRateDay", "TotalExtras","TotalBill")])
+
+
