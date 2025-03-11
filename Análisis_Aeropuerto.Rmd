@@ -132,7 +132,7 @@ Bla bla bla
 # Obtener estadísticas descriptivas
 summary(Rentalcar_tabla[c("TotalRate", "AvgRateDay", "TotalExtras","TotalBill")])
 
-.kable(tabla_1, format = "latex", booktabs = TRUE) %>%
+kable(tabla_1, format = "latex", booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position"))
 
 ```
@@ -189,6 +189,54 @@ print(Prop_pago)
 ```
 
 La proporción de reservas prepagadas frente a las no prepagadas es de 10,51%.
+
+Aeropuertos más usados para la reserva de automóviles
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+
+# Tabla agrupada por frecuencia de Fuente (Source)
+frecuencia_por_tiempo_Source <- Rentalcar_tabla %>%
+  group_by(LocOut) %>%
+  summarise(frecuencia = n())
+
+colores_azules_degradados <- c(
+  "#E1F5FE",  # Azul muy claro
+  "#B3E5FC",
+  "#81D4FA",
+  "#4FC3F7",
+  "#29B6F6",
+  "#03A9F4",
+  "#039BE5",
+  "#0288D1",
+  "#0277BD",
+  "#01579B",  # Azul oscuro
+  "#0D47A1",  # Azul muy oscuro
+  "#1A237E",  # Azul oscuro con un toque violeta
+  "#1976D2",  # Azul intermedio
+  "#1565C0",
+  "#3A9BD3",
+  "#008B8B",
+  "#00FFFF",
+  "#87CEEB",
+  "#00BFFF"
+  
+  # Azul aún más profundo
+)
+
+frecuencia_por_tiempo_Source <- frecuencia_por_tiempo_Source[order(frecuencia_por_tiempo_Source$frecuencia), ]
+
+# Gráfico de barra de las fuentes
+ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(LocOut, -frecuencia), y = frecuencia, fill = LocOut)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Frecuencia de los Aeropuertos donde se rentó el Auto",
+       x = "Aeropuertos",
+       y = "Frecuencia") +
+  scale_fill_manual(values = colores_azules_degradados) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
 
 
 
