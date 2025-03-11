@@ -283,3 +283,10 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Class, -frecuencia), y = fr
 
 ```
 
+Histograma de los días de renta de autos
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(Rentalcar_tabla, aes(x = RDays)) + 
+  geom_histogram(binwidth = 2, fill = "blue", color = "black") + 
+  labs(title = "Histograma del número de días de renta", x = "Número de días de renta", y = "Frecuencia")
+```
