@@ -132,4 +132,63 @@ Bla bla bla
 # Obtener estadísticas descriptivas
 summary(Rentalcar_tabla[c("TotalRate", "AvgRateDay", "TotalExtras","TotalBill")])
 
+.kable(tabla_1, format = "latex", booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_position"))
+
+```
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+frecuencias <- Rentalcar_tabla %>%
+  count(Status_)
+
+colores_azules_degradados_2 <- c(
+  "#B3E5FC",
+  "#0277BD",
+  "#01579B",  # Azul oscuro
+  "#1A237E" # Azul oscuro con un toque violeta 
+)
+
+# Crear el gráfico de barras horizontal
+ggplot(frecuencias, aes(x = reorder(Status_, n), y = n, fill = Status_)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Frecuencia de Categorías", x = "Status", y = "Frecuencia") +
+  theme_minimal() +
+  scale_fill_manual(values = colores_azules_degradados_2)
+
+
+```
+
+Proporción de Reservas pagadas frente a las no pagadas:
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+# Filtrar usando subsetting básico para las categorías "A" y "B"
+tabla_filtrados_NO <- Rentalcar_tabla[Rentalcar_tabla$Status_ %in% c("CANCELED", "NO SHOW"), ]
+tabla_filtrados_SI <- Rentalcar_tabla[Rentalcar_tabla$Status_ %in% c("SHOW"), ]
+NO_Pagos <- nrow(tabla_filtrados_NO)
+SI_Pagos <- nrow(tabla_filtrados_SI)
+
+Prop_pago <- (SI_Pagos / ( NO_Pagos+SI_Pagos))*100
+print(Prop_pago)
+
+```
+
+La Proporción de reservas pagadas frente a las no pagadas fue de un 34.07%.
+
+##### Proporción de reservas prepagadas frente a las no prepagadas
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+
+tabla_filtrados_NO <- Rentalcar_tabla[Rentalcar_tabla$res_prepagos == 0, ]
+tabla_filtrados_SI <- Rentalcar_tabla[Rentalcar_tabla$res_prepagos > 0, ]
+NO_Pagos <- nrow(tabla_filtrados_NO)
+SI_Pagos <- nrow(tabla_filtrados_SI)
+
+Prop_pago <- (SI_Pagos / ( NO_Pagos+SI_Pagos))*100
+print(Prop_pago)
+
+```
+
+La proporción de reservas prepagadas frente a las no prepagadas es de 10,51%.
+
+
 
