@@ -1,28 +1,27 @@
 ---
 title: "Estudiar el comportamiento de los autos rentados en la empresa en el año 2024"
-author: "Nathalia Bognanno, Maria Herrera, Angelo Lara"
+author: "Nathalia Bognanno, María Herrera, Angelo Lara"
 date: "2025-03-01"
-output:
-  pdf_document: default
-  word_document: default
+output: pdf_document
 ---
+
 # Análisis de el aeropuerto:
 
 ## Introducción
 
+## Objetivos
 
+-   Calcular las estadísticas descriptivas de la tarifa total, la tarifa promedio por día y la factura total.
 
-## Objetivos 
+-   Calcular la proporción de las reserva pagadas frente a las no pagadas.
 
-+ Calcular las estadísticas descriptivas de la tarifa total, la tarifa promedio por día y la factura total.
+-   Determinar cual es la fuente de reservación más utilizada.
 
-+ Calcular la proporción de las reserva pagadas frente a las no pagadas.
+-   Determinar los tipos de autos más rentados según el aeropuerto.
 
-+ Determinar cual es la fuente de reservación más utilizada.
+-   Analizar cuánto varía la tarifa diaria de un tipo de vehículo en los distintos aeropuertos.
 
-+ Determinar los tipos de autos más rentados según el aeropuerto.
-
-+ Analizar cuánto varía la tarifa diaria de un tipo de vehículo en los distintos aeropuertos.
+\pagebreak
 
 ## Análisis
 
@@ -50,10 +49,17 @@ Rentalcar_tabla <- Rentalcar_tabla %>% mutate(Hora_Booked = format(Booked, "%H:%
 
 ```
 
+### Frecuencias de reservas por mes
 
-#### Frecuencias de reservas por mes
+Se realizó un análisis para establecer la cantidad de reservas realizadas durante el año 2024, tomando en cuenta su estatus, los cuales pueden ser:
 
-Bla Bla Bla
+-   Show : El cliente se presentó y retiró el auto reservado.
+
+-   No Show : El cliente no se presento a retirar el auto.
+
+-   Canceled : El cliente cancelo la reserva.
+
+-   Unknow: El estatus de la reserva es desconocido. Esto puede ser debido a que la recopilación de datos acerca de las reservas de la empresa puede no ser optimo, y sería un punto a mejorar para realizar un optimo análisis y poder mejorar el servicio.
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 library(ggplot2)
@@ -66,19 +72,20 @@ frecuencia_por_tiempo_Status <- Rentalcar_tabla %>%
 # Gráfico de frecuencia por mes de reserva 
 ggplot(frecuencia_por_tiempo_Status, aes(x = periodo, y = frecuencia, color = Status_)) +
   geom_line() +
-  labs(title = "Serie de Tiempo de Frecuencia de Estado",
+  labs(title = "Serie de Tiempo de Frecuencia por status",
        x = "Periodo",
        y = "Frecuencia") +
   theme_minimal()
 ```
+#### Conclusiones
 
-##### Conclusiones
+Podemos observar que la fecha en la que se rentaron más autos fue entre junio y agosto del año 2024, el mes de julio fue el más activo con más de 200 reservas de autos donde el cliente se presentó para retirar y usar el auto, alrededor de 200 reservas donde el cliente no se presentó para retirar el auto, un poco menos de 175 reservas canceladas, y alrededor de 125 reservas cuyo estatus es desconocido.
 
-Bla Bla Bla
+\pagebreak
 
-#### Frecuencia de reserva de autos por fuente
+### Frecuencia de reserva de autos por fuente
 
-Bla Bla Bla
+Para establecer cuales son las fuentes en las que se realizaron la mayoría de las reservas con la intención de posiblemente invertir en publicidad, se utilizó un gráfico de barras que mide la frecuencia con que se utilizó cada fuente.
 
 ```{r,  echo = FALSE, message=FALSE, warning=FALSE}
 
@@ -86,7 +93,7 @@ library(RColorBrewer)
 
 # Tabla agrupada por frecuencia de Fuente (Source)
 frecuencia_por_tiempo_Source <- Rentalcar_tabla %>%
-  group_by(periodo = floor_date(Fecha_Booked, "month"), Source) %>%
+  group_by( Source) %>%
   summarise(frecuencia = n())
 
 colores_azules_degradados <- c(
@@ -106,7 +113,7 @@ colores_azules_degradados <- c(
   "#1565C0"   # Azul aún más profundo
 )
 
-
+frecuencia_por_tiempo_Source <- frecuencia_por_tiempo_Source[order(frecuencia_por_tiempo_Source$frecuencia), ]
 
 # Gráfico de barra de las fuentes
 ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Source, -frecuencia), y = frecuencia, fill = Source)) +
@@ -119,23 +126,60 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Source, -frecuencia), y = f
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+#### Conclusiones
 
-##### Conclusiones
+Podemos observar que las 3 mayores funtes de reserva son:
 
-Bla bla bla
+-   SABRE
 
+-   BookingGroup
 
-### Estadísticas descriptivas de la tarifa total, la tarifa promedio por día, los cobros extras y la factura total.
+-   Cartrawler
+
+Se podría considerar invertir en publicidad en estos servicios para aumentar la demanda a través de estas fuentes.
+
+También vemos que las 3 menores fuentes de reserva son:
+
+-   CRX
+
+-   CALL FREE 0800
+
+-   Telefono Estación
+
+Si alguno de estos servicios genera costos a la empresa, se podría considerar eliminar las suscripciones pues no están siendo efectivas para atraer clientes a la empresa.
+
+### Estadísticas descriptivas de la tarifa total, la tarifa promedio por día, los cobros extras, la factura total, y los días de renta promedio:
+
+Podemos ver mediante las estadísticas descriptivas de las tarifas y cobros extras, lo que por lo general cubre las necesidades de los clientes dado por la media, la mediana y los cuartiles 1 y 3.
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
 
 # Obtener estadísticas descriptivas
-summary(Rentalcar_tabla[c("TotalRate", "AvgRateDay", "TotalExtras","TotalBill")])
+tabla_1 <- summary(Rentalcar_tabla[c("TotalRate", "AvgRateDay", "TotalExtras","TotalBill")])
 
 kable(tabla_1, format = "latex", booktabs = TRUE) %>%
     kable_styling(latex_options = c("striped", "hold_position"))
 
 ```
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+ggplot(Rentalcar_tabla, aes(x = RDays)) + 
+  geom_histogram(binwidth = 2, fill = "blue", color = "black") + 
+  labs(title = "Histograma del número de días de renta", x = "Número de días de renta", y = "Frecuencia")
+
+```
+#### Conclusiones
+
+Podemos observar que la tarifa promedio por día ronda alrededor de entre 20 y 26 dólares, también vemos que en general la tarifa total pagada por los clientes se encuentra alrededor de 80 dólares, lo que nos indica que los autos se rentan generalmente entre 3 y 4 días. Entonces, con el fin de atraer más clientes se pueden realizar ofertas y paquetes asociados a estos días y publicitarlos dado que se sabe que por lo general esto es lo que más necesitan los clientes.
+
+<!-- colocar los días preferibles por los clientes y decir ofertas -->
+
+\pagebreak
+
+### Frecuencia de categorías por estatus (Total):
+
+Para observar la eficiencia operativa de la empresa vamos a estudiar y determinar la cantidad de operaciones canceladas o en las cuales el cliente no se reportó, además de determinar la proporción de reservas en las que el cliente realizó los pagos y en las que no.
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 frecuencias <- Rentalcar_tabla %>%
@@ -157,8 +201,11 @@ ggplot(frecuencias, aes(x = reorder(Status_, n), y = n, fill = Status_)) +
 
 
 ```
+#### Conclusiones
 
-Proporción de Reservas pagadas frente a las no pagadas:
+Podemos observar que la suma de las reservas canceladas y en las que el cliente no fue, casi duplica al número de clientes que utilizaron el servicio. Y además, tenemos un número sumamente alto de operaciones en las que se desconoce si el cliente utilizó el servicio o no.
+
+### Proporción de Reservas pagadas frente a las no pagadas:
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 # Filtrar usando subsetting básico para las categorías "A" y "B"
@@ -171,8 +218,7 @@ Prop_pago <- (SI_Pagos / ( NO_Pagos+SI_Pagos))*100
 print(Prop_pago)
 
 ```
-
-La Proporción de reservas pagadas frente a las no pagadas fue de un 34.07%.
+La Proporción de reservas pagadas frente a las no pagadas fue de un 34.07%. Esto nos indica que tan solo el 34,04% de las operaciones que fueron solicitadas se utilizaron realmente.
 
 ##### Proporción de reservas prepagadas frente a las no prepagadas
 
@@ -187,10 +233,11 @@ Prop_pago <- (SI_Pagos / ( NO_Pagos+SI_Pagos))*100
 print(Prop_pago)
 
 ```
-
 La proporción de reservas prepagadas frente a las no prepagadas es de 10,51%.
 
-Aeropuertos más usados para la reserva de automóviles
+\pagebreak
+
+### Aeropuertos más usados para la reserva de automóviles
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 
@@ -237,6 +284,7 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(LocOut, -frecuencia), y = f
 
 
 ```
+### Frecuencia de los tipos de carros que se rentó:
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 
@@ -281,12 +329,4 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Class, -frecuencia), y = fr
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-```
-
-Histograma de los días de renta de autos
-
-```{r, echo = FALSE, message=FALSE, warning=FALSE}
-ggplot(Rentalcar_tabla, aes(x = RDays)) + 
-  geom_histogram(binwidth = 2, fill = "blue", color = "black") + 
-  labs(title = "Histograma del número de días de renta", x = "Número de días de renta", y = "Frecuencia")
 ```
