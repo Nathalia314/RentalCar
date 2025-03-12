@@ -173,9 +173,9 @@ ggplot(Rentalcar_tabla, aes(x = RDays)) +
 
 Podemos observar que la tarifa promedio por día ronda alrededor de entre 20 y 26 dólares, también vemos que en general la tarifa total pagada por los clientes se encuentra alrededor de 80 dólares, lo que nos indica que los autos se rentan generalmente entre 3 y 4 días. Entonces, con el fin de atraer más clientes se pueden realizar ofertas y paquetes asociados a estos días y publicitarlos dado que se sabe que por lo general esto es lo que más necesitan los clientes.
 
-<!-- colocar los días preferibles por los clientes y decir ofertas -->
+Vemos en los pagos totales, que el máximo que se ha pagado por la renta de un auto ha sido de 2615,87 dólares, mientras que la renta mínima ha sido de 10,27 dólares.
 
-\pagebreak
+Y los cuartiles nos indican que el 25% de las reservas se han pagado por un costo inferior a 79,74 dólares, mientras que el 75% de las reservas se han pagado por un costo inferior a 240 dólares, esto nos dice que el 50% de las rentas de autos se han realizado entre 80 y 240 dólares, esto es, aproximadamente entre 2 y 10 días de renta.
 
 ### Frecuencia de categorías por estatus (Total):
 
@@ -284,7 +284,28 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(LocOut, -frecuencia), y = f
 
 
 ```
+Podemos observar que los aeropuertos donde se rentó mayor cantidad de autos son:
+
+-   **DFW**: Aeropuerto Internacional de Dallas/Fort Worth (Texas, EE.UU.)
+-   **MCO**: Aeropuerto Internacional de Orlando (Florida, EE.UU.)
+-   **IAH**: Aeropuerto Intercontinental George Bush (Houston, Texas, EE.UU.)
+-   **YYZ**: Aeropuerto Internacional de Toronto Pearson (Toronto, Canadá)
+
+En estos aeropuertos se rentaron entre 125 y 240 autos, de estos 4 aeropuertos podemos observar que en los aeropuertos de Dallas y Orlando se rentaron más de 225 autos.
+
+Los aeropuertos en donde se rentó la menor cantidad de autos son los de:
+
+-   **SAW**: Aeropuerto Sabiha Gökçen, ubicado en Estambul, Turquía.
+
+-   **MIAC01**: Este código no parece corresponder a un aeropuerto, sino a un código de sistema para Miami, a menudo utilizado para referirse a ciertos servicios o lugares en el área de Miami, pero no es un código de aeropuerto estándar. En el caso de MIA, sería el Aeropuerto Internacional de Miami.
+
+-   **CUN**: Aeropuerto Internacional de Cancún, ubicado en Cancún, México.
+
+-   **STI**: Aeropuerto Internacional Cibao, ubicado en Santiago de los Caballeros, República Dominicana.
+
 ### Frecuencia de los tipos de carros que se rentó:
+
+Vamos a ver ahora las preferencias de los clientes por los tipos de autos en renta para así poder determinar qué tipo de autos son los favoritos y que la empresa determine cuales son una buena inversión.
 
 ```{r, echo = FALSE, message=FALSE, warning=FALSE}
 
@@ -330,3 +351,76 @@ ggplot(frecuencia_por_tiempo_Source, aes(x = reorder(Class, -frecuencia), y = fr
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+#### Conclusiones
+
+Podemos observar que de todos los modelos ofertados por la empresa solo 3 son los más utilizados, estos son:
+
+-   **EDAR**:
+
+    El código **EDAR** se refiere a un tipo de vehículo en el contexto de alquiler de autos, donde cada letra representa una característica del vehículo. Específicamente, **EDAR** se asocia generalmente a los siguientes tipos de vehículos:
+
+    -   **E**: Economy (económico)
+    -   **D**: Deluxo o estándar, en este caso se suele asociar con vehículos que son un poco más grandes que un vehículo compacto.
+    -   **A**: Automático (transmisión automática)
+    -   **R**: Regular (regular)
+
+    Por lo tanto, **EDAR** describe un automóvil económico y compacto con transmisión automática. Ejemplos típicos de este tipo de vehículos podrían incluir modelos como el Chevrolet Spark, Mitsubishi Mirage o similar.
+
+-   **IDAR**: Este código se refiere a vehículos de categoría intermedia. En el ámbito del alquiler, "IDAR" puede incluir modelos como un Toyota Corolla o un Ford Focus.
+
+-   **CDAR**: Este código indica vehículos de categoría compacta. Es común que este tipo de vehículos sea más espacioso que el económico, y ejemplos incluyen el Honda Civic o el Hyundai Elantra.
+
+Entre estos destacan los modelos tipo ECAR e IDAR con más de 400 y más de 370 veces que fueron rentados cada uno respectivamente.
+
+Mientras que los menos rentados son:
+
+-   **FVAR**: Este código generalmente se refiere a vehículos de categoría "Familiar" o "Furgón". Suele incluir vehículos con mayor capacidad de carga, como SUV o minivans. Ejemplos podrían incluir modelos como el Ford Escape o el Dodge Grand Caravan.
+
+-   **STAR**: Este código generalmente se refiere a vehículos de lujo o premium. El modelo específico puede variar según la empresa de alquiler, pero podría incluir marcas como BMW, Mercedes-Benz o Audi.
+
+-   **OVAR**: Este código se refiere a vehículos de "Van" o "Monovolumen", que tienen un tamaño mayor y son ideales para grupos o viajes familiares. Modelos como la Chrysler Pacifica o la Ford Transit podrían caber en esta categoría.
+
+Esto puede deberse a que son autos de lujo asociados a un mayor costo.
+
+### Determinar el tipo de auto más rentado por aeropuerto:
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+resultado <- Rentalcar_tabla %>%
+  group_by(LocOut, Class) %>%
+  summarise(total_rentas = n()) %>%
+  arrange(LocOut, desc(total_rentas)) %>%
+  slice(1)
+
+kable(resultado, format = "latex", booktabs = TRUE) %>%
+    kable_styling(latex_options = c("striped", "hold_position"))
+
+```
+Podemos observar que no en todos los aeropuertos los autos más rentados no son necesariamente los de tipo ECAR, IDAR y CDAR, entonces viendo el tipo de auto más rentado en cada aeropuerto podemos observar cuales serían unas buenas inversiones para la empresa en tipos de carros.
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+# Filtrar el dataframe para la clase EDAR
+datos_edar <- Rentalcar_tabla[Rentalcar_tabla$Class == "EDAR", ]
+
+# Resumen estadístico de tarifas diarias por aeropuerto
+resumen_tarifas <- aggregate(AvgRateDay ~ LocOut, data = datos_edar, FUN = summary)
+
+# Crear un boxplot para visualizar la variación
+ggplot(datos_edar, aes(x = LocOut, y = AvgRateDay)) +
+  geom_boxplot(fill = "lightblue", color = "darkblue") +
+  labs(title = "Variación de la Tarifa Diaria de EDAR por Aeropuerto",
+       x = "Aeropuerto",
+       y = "Tarifa Diaria") +
+  theme_minimal()
+```
+#### Conclusión
+
+Podemos observar que el aeropuerto que ha tenido la tarifa más alta promedio por día para los autos de tipo EDAR es el Aeropuerto internacional de Estambul (IST), y la que ha tenido la tarifa promedio más baja ha sido es Aeropuerto internacional de Miami (MIA).
+
+El aeropuerto que posee la mediana más alta de la tarifa promedio es el Aeropuerto Internacional de Vancouver (YVR), mientras que el que posee la mediana más baja es el de Miami (MIA).
+
+Y el que tiene mayor variación en su tarifa promedio diaria es el de Estambul (IST).
+
+Esto nos permite determinar que Aeropuertos generan los mayores beneficios, y cuales son aquellos que tienen la tarifa más baja y podrían mejorar en su servicio para producir mayores ganancias para la empresa.
+
+
+
