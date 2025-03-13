@@ -103,6 +103,32 @@ Existen 3 grupos de compañías de alquiler de automóviles:
 -   Brokers: Nombre coloquial por el cual se conoce a las empresas que funcionan estableciendo acuerdos comerciales con las compañías pertenecientes al primer grupo para así, tener acceso a sus flotas de automóviles y siendo de enorme utilidad para los usuarios al obtener el mejor precio, para una determinada fecha y un lugar concreto.
 -   Renting: Este tercer grupo ofrecen servicios donde el alquiler tiene un periodo de larga duración (mínimo de 6 meses a 4 años) por una cuota sensiblemente más baja. Estas empresas tienen una flota de vehículos y un establecimiento físico propio, sin mencionar que sus servicios se encuentran dirigidos principalmente a empresas que necesiten vehículos disponibles para sus trabajadores.
 
+### Código ACRISS
+
+El código ACRISS (Association of Car Rental Industry Systems Standards) es un sistema de clasificación de vehículos diseñado por las agencias de alquiler de automóviles para definir modelos y asegurar una comparación estándar entre vehículos, se utilizan para simplificar la selección de vehículos de alquiler.
+
+Este código está compuesto por cuatro letras, cada una representando una característica específica del vehículo:
+-   Primera letra: Categoría del vehículo (tamaño, costo, potencia y lujo).
+-   Segunda letra: Tipo de carrocería (sedán, SUV, convertible, etc.).
+-   Tercera letra: Tipo de transmisión y tracción (manual/automática y 2WD/4WD/AWD).
+-   Cuarta letra: Tipo de combustible (gasolina, diésel, híbrido, eléctrico, etc.) y si tiene aire acondicionado o no.
+
+Un código como “CDMR” podría representar un vehículo compacto de 2/4 puertas, con transmisión manual y sin aire acondicionado.
+
+Los códigos ACRISS garantiza transparencia y uniformidad en el proceso de alquiler de vehículos, facilitando a los clientes encontrar exactamente lo que necesitan sin sorpresas desagradables. Este objetivo se cumple a través de:
+-   Clasificación Uniforme: Facilitan a los clientes la comparación de vehículos de diferentes agencias, siguiendo el ejemplo anterior un automóvil de categoría "CDMR" en una compañía es comparable a uno con el mismo código en otra.
+-   Estándares Internacionales: Dado que son utilizados internacionalmente, puedes estar seguro de que un vehículo con un código en un país tendrá características similares en otro país.
+-   Reserva Online: Cuando reservas un en línea, el código ACRISS te ayuda a entender qué tipo de coche estás seleccionando. Cada letra en el código te da información específica sobre el tamaño del coche, el tipo de carrocería, la transmisión y el tipo de combustible.
+-   Variedad de Opciones: Permiten a las agencias ofrecer opciones que se ajusten a las necesidades y presupuestos de los viajeros.
+
+### Códigos de aeropuertos asignados por la Asociación Internacional de Transporte Aéreo (IATA)
+
+Las empresas dedicadas al alquiler de vehículos que operan en aeropuertos utilizan estos códigos de aeropuertos para identificar las ubicaciones de recogida y entrega de los vehículos, facilitan la gestión y seguimiento de los vehículos en diferentes ubicaciones: "LocOut" para los aeropuertos donde se recoge el vehículo, y "LocIn" para el aeropuerto donde se devuelve al finalizar el plazo establecido previamente en el contrato. En este procedimiento se inluyen:
+-   Reserva: Desde el momento de la reserva el cliente puede elegir el aeropuerto como lugar de recogida o devolución del vehículo y los códigos de los aeropuertos donde el cliente recogerá y devolverá el vehículo estarán especificados en el Contrato de Alquiler.
+-   Gestión de Flotas: Las empresas de alquiler utilizan estos códigos para gestionar y rastrear su flota de vehículos en diferentes ubicaciones, lo que les permite conocer cuántos vehículos están disponibles en cada aeropuerto y planificar la logística de manera eficiente.
+-   Logística y Transporte: Se utilizan para organizar los vehículos de un aeropuerto a otros en función a la demanda de alquiler.
+
+Las empresas de alquiler de vehículos utilizan el código ACRISS y Códigos de aeropuertos para generar informes y realizar análisis basados patrones de uso, demanda estacional y otros factores que afectan su operación. Esto les ayuda a tomar decisiones informadas sobre la gestión de su flota y sus estrategias comerciales.
 
 \pagebreak
 
