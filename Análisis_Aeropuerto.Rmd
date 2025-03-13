@@ -26,6 +26,7 @@ En este caso; todos los movimientos referentes a la empresa (el vehículo que fu
 Resaltar estos puntos claves dentro la misma BBDD en Excel puede resultar difícil y extenso debido al número de datos presentes en la misma, incluso con las herramientas de cálculo presentes en Excel debido a la combinación de datos tantos numéricos como de texto. Por lo que la implementación de procedimientos estadísticos toma un papel fundamental para explicar de forma más detallada y resumida esta serie de patrones entre los vehículos de alquiler y el aeropuerto donde fue alquilado cada uno, así como también el uso de diferentes gráficos puede ayudar a una mejor visualización de los datos. De este modo, se van a aplicar diversos cálculos estadísticos y gráficos que ofrece la aplicación de RStudio para estudiar el comportamiento de los autos rentados en la Empresa durante el año 2024.
 
 # Objetivo General
+
 Analizar y describir el comportamiento de los autos rentados en la empresa durante el año 2024
 
 ## Objetivos Específicos
@@ -39,6 +40,19 @@ Analizar y describir el comportamiento de los autos rentados en la empresa duran
 -   Determinar los tipos de autos más rentados según el aeropuerto.
 
 -   Analizar cuánto varía la tarifa diaria de un tipo de vehículo en los distintos aeropuertos.
+
+# Justificación de la Investigación
+
+El uso de herramientas estadísticas puede resultar beneficioso dentro de cualquier área laboral gracias a que se obtiene una mejor interpretación sobre el comportamiento de los datos recolectados durante una investigación y, a través de la implementación de gráficos (de acuerdo al tipo de datos que se vayan a analizar), se logra una visualización de los resultados obtenidos durante el análisis. En el caso de las empresas que se dedican al alquiler de vehículos, la aplicación de estas herramientas ayuda a encontrar patrones que no se pueden reconocer “a simple vista” (o que sí se pueden visualizar, pero que resultan difíciles de ver para aquellos que no se encuentran familiarizados con el tema) y mejorar la planificación de estrategias a futuro para que aumenten las ganancias por servicios.
+
+Por ejemplo (para el análisis que se desea realizar a continuación): Cuando se tienen conocimiento sobre el tipo de auto que tuvo mayor rentabilidad y el aeropuerto donde el procedimiento de alquiler fue más frecuente durante un intervalo determinado de tiempo, se puede buscar el mantenimiento constante de esos vehículos y garantizar que siempre esté presente de forma continua el automóvil de la misma marca (y en el mismo aeropuerto de recogida y salida) para la persona que lo necesite. No hasta el punto de convertir el aeropuerto en un punto fijo de reserva para la empresa, pero sí llevando un registro sobre los aeropuertos donde sus servicios son más solicitados a lo largo del tiempo.
+
+# Límites y Alcances de la Investigación
+
+El presente estudio se enfoca en el análisis de la base de datos "RentalCar" utilizando la aplicación RStudio y RMarkdown. Los límites del estudio incluyen la disponibilidad de datos proporcionados por la base de datos "RentalCar" y el tiempo asignado para la realización del trabajo. Además, se considerarán únicamente las variables relacionadas con el alquiler de vehículos, excluyendo cualquier otra información no pertinente.
+
+Los alcances del estudio incluyen la identificación de patrones y tendencias en los datos de alquiler de vehículos, así como la generación de informes y visualizaciones que faciliten la comprensión de los resultados. Este análisis permitirá obtener una visión general del comportamiento del mercado de alquiler de vehículos y proporcionar recomendaciones basadas en los hallazgos obtenidos.
+
 
 \pagebreak
 
