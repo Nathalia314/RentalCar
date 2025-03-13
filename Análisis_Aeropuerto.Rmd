@@ -53,6 +53,19 @@ El presente estudio se enfoca en el análisis de la base de datos "RentalCar" ut
 
 Los alcances del estudio incluyen la identificación de patrones y tendencias en los datos de alquiler de vehículos, así como la generación de informes y visualizaciones que faciliten la comprensión de los resultados. Este análisis permitirá obtener una visión general del comportamiento del mercado de alquiler de vehículos y proporcionar recomendaciones basadas en los hallazgos obtenidos.
 
+\pagebreak
+
+# Marco Teorico
+
+## Antecedentes de la Investigación
+
+Los antecedentes permiten definir e interpretar el problema planteado mediante la síntesis de un marco referencial conformado por las exploraciones y trabajos vinculados a la investigación, estableciendo un enfoque teórico y metodológico de la misma, los antecedentes que sustentan esta investigación son las que a continuación se señalan:
+
+Rene Díaz (20001), realizo una investigación titulada “Estudio de factibilidad para una arrendadora de vehículos dirigida a personas naturales ubicada en las mercedes para el segundo semestre del año 2001”. Y el objetivo fue analizar la factibilidad de implementar una arrendadora de vehículos en Venezuela, específicamente en las Mercedes para personas naturales (hombres y mujeres) pertenecientes a los niveles socioeconómicos A, B, C+ para el segundo semestre del año 2001, para optar al título de Licenciado en Ciencias Administrativas, mención gerencia en la Universidad Metropolitana, dicha investigación utilizo la metodología de evaluación de proyectos. Dicha investigación aporto positivamente ya que para su ejecución se analizaron las variables técnicas, económicas y financieras necesarias para implementar una arrendadora de vehículos con las condiciones planteadas y para el momento de esa investigación el autor reporta; como limitación la poca disponibilidad de información existente y como conclusión que el proyecto es factible desde el punto de vista de mercado y técnico pero no financiero.
+
+De acuerdo con Fortune Business Insights en el informe publicado en febrero 2025, el tamaño del mercado de alquiler y arrendamiento de automóviles se valoró en 682,49 mil millones de dólares en 2023. Se proyecta que el mercado crecerá de 728,13 mil millones de dólares en 2024 a 1,352,44 mil millones de dólares en 2032, exhibiendo una tasa compuesta anual del 8% durante el período de pronóstico.
+
+Esta empresa de análisis de mercados reporta que se proyecta que el mercado crecerá de los 728,13 mil millones de dólares del 2024 a 1,352,44 mil millones de dólares en 2032, exhibiendo una tasa compuesta anual del 8% durante el período de pronóstico. Es por ello que las empresas de alquiler y arrendamiento de automóviles aprovechen la tecnología para sus procesos de reserva, selección de vehículos, pagos, monitoreo en tiempo real el estado de los vehículos y mantenimiento proactivo, esto mejora la experiencia general del cliente y optimiza la operación.
 
 \pagebreak
 
