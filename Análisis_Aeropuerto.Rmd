@@ -67,6 +67,22 @@ De acuerdo con Fortune Business Insights en el informe publicado en febrero 2025
 
 Esta empresa de análisis de mercados reporta que se proyecta que el mercado crecerá de los 728,13 mil millones de dólares del 2024 a 1,352,44 mil millones de dólares en 2032, exhibiendo una tasa compuesta anual del 8% durante el período de pronóstico. Es por ello que las empresas de alquiler y arrendamiento de automóviles aprovechen la tecnología para sus procesos de reserva, selección de vehículos, pagos, monitoreo en tiempo real el estado de los vehículos y mantenimiento proactivo, esto mejora la experiencia general del cliente y optimiza la operación.
 
+## Bases Teóricas
+
+Arias. (2006), establece que las bases teóricas están compuestas por los conceptos, proposiciones y filosofías que explican o contribuyen a esclarecer el problema de estudio. Estas permiten ubicar el tema objeto de estudio dentro del conjunto de teorías existentes además de permitir en cual corriente de pensamientos se escribe y lo explica así: Las bases teóricas comprenden el conjunto de proposiciones que constituyen un punto de vista el cual va dirigido a explicar el fenómeno o problema planteado, por ello se pueden dividir las bases teóricas en función de los tópicos que integran la temática tratada a las variables que serán analizadas. (p 41).
+
+### Administración Estratégica
+
+Según Idalberto Chiavenato (1994), La administración estratégica está Orientada hacia objetivos generales de la organización al largo plazo. La administración estratégica busca el comportamiento que tiendan a la consecución de resultados globales de la organización. Está orientada hacia el futuro y hacia el destino de la organización. El administrador estratega es aquel cuya actividad se orienta hacia la organización completa para moldear su futuro y preparar su destino. (p. 184).
+
+### Etapas de la Administración Estratégica
+
+-   Establecer objetivos: El propósito de establecer objetivos es clarificar la visión del negocio. Esta etapa consiste en identificar tres facetas clave. Primero, define objetivos a corto y largo plazo. Segundo, identifica el proceso de cómo lograr tu objetivo. Finalmente, personaliza el proceso para tu personal, dale a cada persona una tarea con la cual pueda tener éxito.
+-   Análisis: El análisis es una etapa clave porque la información reunida en esta etapa formará las siguientes dos etapas. El centro del análisis tiene que ser el comprender las necesidades del negocio como entidad sostenible, su dirección estratégica e identificar iniciativas que ayudarán a que la empresa crezca.
+-   Formulación de la estrategia: El primer paso para formar una estrategia es revisar la información ganada al completar el análisis. Los problemas que tenga la empresa tienen que ser priorizados por su importancia para tener éxito. Una vez priorizados, empieza a formular la estrategia.
+-   Implementación de la estrategia: Una implementación exitosa de la estrategia es crítica para el proyecto de la empresa. Esta es la etapa de acción del proceso estratégico de administración.
+-   Evaluación y control: Cualquier evaluación exitosa comienza con definir los parámetros que se van a medir. Estos parámetros tienen que reflejar los objetivos establecidos en la etapa 1 y se deben tomar acciones correctivas cuando sea necesario.
+
 \pagebreak
 
 ## Análisis
