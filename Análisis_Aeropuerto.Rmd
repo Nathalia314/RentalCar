@@ -9,6 +9,17 @@ output: pdf_document
 
 ## Introducción
 
+El uso de la Estadística tiene un papel fundamental no solamente en la recolección y análisis de una serie de datos recolectada previamente durante una determinada investigación, sino que también ayuda en la toma de decisiones al plantear escenarios que permitan anticipar el futuro de manera organizada y, por ende, se busque mejorar el rendimiento de un negocio o empresa por medio del: Descubrimiento de patrones durante el proceso de compra-venta (identificando los errores que pudieron presentarse durante el mismo proceso), tendencias (o preferencias) en la compra de algún producto, entre otros factores que ayuden en el crecimiento del negocio. En esta ocasión, se va a realizar un Trabajo de Investigación donde se aplicarán diversos análisis estadísticos para estudiar el comportamiento de los autos rentados en una empresa de alquiler de automóviles durante un determinado período de tiempo.
+
+La investigación va a constar de 3 etapas en total que se mencionan a continuación:
+
+Parte I: La Formulación del Problema, que se basa en la gestión del Planeamiento del Problema, Objetivo general y específicos de la investigación, Justificación, Marco Teórico y la explicación de las variables que se van a utilizar.
+
+Parte II: Análisis Exploratorio de los Datos, siendo la parte en la que se resaltarán los problemas que se encontraron dentro de la Base de Datos (BBDD) y la forma en que se resolvieron estos problemas mediante el uso de herramientas estadísticas.
+
+Parte III: Análisis y Resultados, los cuales son las salidas finales y las conclusiones que dan respuesta a las preguntas y objetivos planteados en la primera parte de la investigación.
+
+
 ## Objetivos
 
 -   Calcular las estadísticas descriptivas de la tarifa total, la tarifa promedio por día y la factura total.
