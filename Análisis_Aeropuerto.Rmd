@@ -83,6 +83,27 @@ Según Idalberto Chiavenato (1994), La administración estratégica está Orient
 -   Implementación de la estrategia: Una implementación exitosa de la estrategia es crítica para el proyecto de la empresa. Esta es la etapa de acción del proceso estratégico de administración.
 -   Evaluación y control: Cualquier evaluación exitosa comienza con definir los parámetros que se van a medir. Estos parámetros tienen que reflejar los objetivos establecidos en la etapa 1 y se deben tomar acciones correctivas cuando sea necesario.
 
+### Uso de la Estadística en la Administración Estratégica
+
+La estadística es una herramienta que se utiliza en la administración estratégica para tomar decisiones y mejorar los procesos. Algunas de las ventajas que puede aportar son:
+-   Permite al Administrador conocer la situación actual, hacia dónde se va y qué se debe mejorar
+-   Permite establecer modelos y patrones de actuación.
+-   Ayuda a detectar problemas, diferencias, áreas de mejora y asociaciones causa-efecto.
+-   Es necesaria para clasificar datos, especialmente cuando se maneja gran cantidad de información.
+
+### Alquiler de Automóviles
+
+Las diferentes fuentes bibliográficas definen el Alquiler de automóviles como “un automóvil que se puede alquilar por un corto periodo de tiempo” o “un automóvil que se puede pagar para utilizarlo por un corto periodo de tiempo”. Es decir; se trata de un contrato que realiza una persona para utilizar un vehículo durante un tiempo determinado donde este límite puede variar desde unas pocas horas hasta varios días, semanas o incluso meses, y acordando una cantidad de dinero con la empresa encargada para la renta. Los motivos para la renta pueden variar dependiendo de cada comprador, incluyendo necesidades de viaje (mayormente cuando uno va a hacer un viaje fuera de su propio país), negocios, turismo o simplemente cuando el coche propio está en reparación.
+
+Las agencias que ofrecen este servicio suelen conocerse como “rent-a-car” o “car hire”, con sus establecimientos situados, sobre todo, en las inmediaciones de aeropuertos, estaciones de trenes y autobuses. Además; ofrecen una variedad de vehículos que van desde automóviles económicos hasta vehículos de lujo (algunos ejemplos son el alquiler de furgonetas, minibuses o camiones), así como también suelen proporcionar servicios adicionales como seguros y asistencia en carretera (complementando sus servicios con sitios Web para hacer las reservas con anticipación a través de internet). Algunas empresas también ofrecen opciones adicionales como GPS, asientos para niños, seguro adicional y más.
+
+Existen 3 grupos de compañías de alquiler de automóviles:
+
+-   Flota: Poseen sus automóviles propios a través de acuerdos que realizan con los fabricantes para que les proporcionen los coches que necesitan, además de tener un establecimiento físico propio.
+-   Brokers: Nombre coloquial por el cual se conoce a las empresas que funcionan estableciendo acuerdos comerciales con las compañías pertenecientes al primer grupo para así, tener acceso a sus flotas de automóviles y siendo de enorme utilidad para los usuarios al obtener el mejor precio, para una determinada fecha y un lugar concreto.
+-   Renting: Este tercer grupo ofrecen servicios donde el alquiler tiene un periodo de larga duración (mínimo de 6 meses a 4 años) por una cuota sensiblemente más baja. Estas empresas tienen una flota de vehículos y un establecimiento físico propio, sin mencionar que sus servicios se encuentran dirigidos principalmente a empresas que necesiten vehículos disponibles para sus trabajadores.
+
+
 \pagebreak
 
 ## Análisis
