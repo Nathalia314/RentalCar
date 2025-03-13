@@ -5,9 +5,7 @@ date: "2025-03-01"
 output: pdf_document
 ---
 
-# Análisis de el aeropuerto:
-
-## Introducción
+# Introducción
 
 El uso de la Estadística tiene un papel fundamental no solamente en la recolección y análisis de una serie de datos recolectada previamente durante una determinada investigación, sino que también ayuda en la toma de decisiones al plantear escenarios que permitan anticipar el futuro de manera organizada y, por ende, se busque mejorar el rendimiento de un negocio o empresa por medio del: Descubrimiento de patrones durante el proceso de compra-venta (identificando los errores que pudieron presentarse durante el mismo proceso), tendencias (o preferencias) en la compra de algún producto, entre otros factores que ayuden en el crecimiento del negocio. En esta ocasión, se va a realizar un Trabajo de Investigación donde se aplicarán diversos análisis estadísticos para estudiar el comportamiento de los autos rentados en una empresa de alquiler de automóviles durante un determinado período de tiempo.
 
@@ -19,8 +17,18 @@ Parte II: Análisis Exploratorio de los Datos, siendo la parte en la que se resa
 
 Parte III: Análisis y Resultados, los cuales son las salidas finales y las conclusiones que dan respuesta a las preguntas y objetivos planteados en la primera parte de la investigación.
 
+# Planteamiento del Problema
 
-## Objetivos
+“Rental Cars” es una empresa cuyo servicio se centra el alquiler de automóviles durante un período corto de tiempo (ya sea que la persona necesite alquilar un auto para un viaje al no tener uno propio, o que su automóvil no se encuentre disponible por fallas técnicas que presente el mismo). En esencia, se paga una tarifa para utilizar el auto de la empresa durante un tiempo determinado.
+
+En este caso; todos los movimientos referentes a la empresa (el vehículo que fue alquilado, el tiempo de reserva, y el monto total pagado por el alquiler) se registraron en una base de datos hecha en un documento de Excel, la cual tiene un registro del total de movimientos presentes desde el año 2023 hasta el año 2024 junto con los aeropuertos donde se realizó la reserva y entrega del automóvil. Al revisar cuidadosamente la BBDD, se puede notar una especie de patrón en el comportamiento de los autos rentados durante un período específico de tiempo (para esta ocasión, los movimientos referentes al año 2024): Algunos autos fueron alquilados un mayor número de veces que otros disponibles en la empresa, mientras que hubo aeropuertos donde se realizó un mayor número de reservas en contraste con los demás.
+
+Resaltar estos puntos claves dentro la misma BBDD en Excel puede resultar difícil y extenso debido al número de datos presentes en la misma, incluso con las herramientas de cálculo presentes en Excel debido a la combinación de datos tantos numéricos como de texto. Por lo que la implementación de procedimientos estadísticos toma un papel fundamental para explicar de forma más detallada y resumida esta serie de patrones entre los vehículos de alquiler y el aeropuerto donde fue alquilado cada uno, así como también el uso de diferentes gráficos puede ayudar a una mejor visualización de los datos. De este modo, se van a aplicar diversos cálculos estadísticos y gráficos que ofrece la aplicación de RStudio para estudiar el comportamiento de los autos rentados en la Empresa durante el año 2024.
+
+# Objetivo General
+Analizar y describir el comportamiento de los autos rentados en la empresa durante el año 2024
+
+## Objetivos Específicos
 
 -   Calcular las estadísticas descriptivas de la tarifa total, la tarifa promedio por día y la factura total.
 
